@@ -18,7 +18,7 @@ public class LevelSpawn : MonoBehaviour
 
         for (int y = 0; y < levels_of_tree; y= y+1)
         {
-            float level_branch = 0;
+            float level_branch = -6;
             Instantiate(Tree_center, new Vector3(0, y, 0), Quaternion.identity);
             //спавн центра
 

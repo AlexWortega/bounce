@@ -7,7 +7,7 @@ public class rotator : MonoBehaviour
     public float radius = 1.0f;
     float timeCounter = 0;
     private Vector3 _startLocation;
-    public Rigidbody rb;
+    //public Rigidbody rb;
     public float speed_up = 5.0f;
      float h = 1.0f;
     public Transform cube;
@@ -27,29 +27,16 @@ public class rotator : MonoBehaviour
    
     private float _tick = 0;
     
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-        _startLocation = transform.localPosition;
-    }
+    
 
-    void FixedUpdate()
+    void Update()
     {
-        if (Input.touchCount == 1)
+        
+
+            if (Input.GetKeyDown(KeyCode.Space))
         {
-            // GET TOUCH 0
-            Touch touch0 = Input.GetTouch(0);
-
-            // APPLY ROTATION
-            if (touch0.phase == TouchPhase.Moved)
-            {
-                cube.transform.Rotate(0f, touch0.deltaPosition.x, 0f);
-            }
-        }
-
-            if (Input.GetKeyDown(KeyCode.Space)) {
-
-            rb.AddForce(new Vector3(0, 10, 0), ForceMode.Impulse);
+            cube.transform.Rotate(1.0f, 0f, 0f);
+            // rb.AddForce(new Vector3(0, 10, 0), ForceMode.Impulse);
         }
     }
 
