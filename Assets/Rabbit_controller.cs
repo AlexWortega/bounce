@@ -15,7 +15,11 @@ public class Rabbit_controller : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.AddForce(transform.forward * thrust);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(transform.forward * 10,ForceMode.Impulse);
+        }
+        
     }
 }
     
